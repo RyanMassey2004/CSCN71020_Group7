@@ -1,2 +1,4 @@
 #pragma once
-char* analyzeTriangle(int side1, int side2, int side3);
+char* analyzeTriangle(float side1, float side2, float side3);
+float angleA(float side1, float side2, float side3);
+float analyzeQuadrangle(float side1, float side2, float side3, float side4, float perimeter, float area);

@@ -1,5 +1,5 @@
 #pragma once
 void printWelcome();
 int printShapeMenu();
-int* getTriangleSides(float* triangleSides);
-int* getQuadrangleSides(float* quadrangleSides);
+float* getTriangleSides(float* triangleSides);
+float* getQuadrangleSides(float* quadrangleSides);

@@ -87,7 +87,12 @@ float area(float side1, float side2) {
 }
 
 char* analyzeQuadrangle(float side1, float side2, float side3, float side4, char result[MAXSIZE]) {
-	if (side1 == side3 && side2 == side4)
+	if (side1 < 0 || side2<0||side3<0||side4<0)
+	{
+		printf("Invalid input");
+		strcpy(result, "Invalid input\0", MAXSIZE);
+	}
+	else if (side1 == side3 && side2 == side4)
 	{
 		strncpy(result, "Rectangle\0", MAXSIZE);
 		float Perimeter = perimeter(side1, side2, side3, side4);
@@ -102,9 +107,4 @@ char* analyzeQuadrangle(float side1, float side2, float side3, float side4, char
 		float Perimeter = perimeter(side1, side2, side3, side4);
 		printf("Perimeter: %f\n", Perimeter);
 	}
-}
-
-int add(int in1, int in2) {
-	int rel = in1 + in2;
-	return rel;
 }

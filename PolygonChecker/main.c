@@ -80,7 +80,7 @@ float* getQuadrangleSides(float* quadrangleSides) {
 	printf_s("Enter the four sides of the quadrangle: \n");
 	for (int i = 0; i < 4; i++)
 	{
-		printf("side %d: ", i+1);
+		printf("side %d: ", i + 1);
 		scanf_s("%f", &quadrangleSides[i]);
 	}
 	return quadrangleSides;

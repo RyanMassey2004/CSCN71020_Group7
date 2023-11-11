@@ -39,6 +39,7 @@ int main() {
 			break;
 		default:
 			printf_s("Invalid value entered.\n");
+			continueProgram = false;
 			break;
 		}
 	}
@@ -61,7 +62,7 @@ int printShapeMenu() {
 	int shapeChoice;
 
 	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
+	scanf_s("%d", &shapeChoice);
 
 	return shapeChoice;
 }

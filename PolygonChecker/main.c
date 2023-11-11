@@ -46,7 +46,7 @@ int main() {
 }
 
 void printWelcome() {
-	printf_s("\n");
+	printf_s("T\n");
 	printf_s(" **********************\n");
 	printf_s("**     Welcome to     **\n");
 	printf_s("**   Polygon Checker  **\n");

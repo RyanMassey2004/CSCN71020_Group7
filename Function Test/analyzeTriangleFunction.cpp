@@ -89,7 +89,7 @@ namespace analyzeTriangleFunction
 		{
 			float triangleSlide[3] = { 3,3,3 };
 			float* triangleSidesPtr = triangleSlide;
-			float angle2 = angleB(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
+			float angle2 = angleC(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			float expected = 60.030434;
 
 			Assert::AreEqual(expected, angle2);

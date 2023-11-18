@@ -65,6 +65,16 @@ namespace analyzeTriangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
+		TEST_METHOD(typeOfTriangle6)
+		{
+			float triangleSlide[3] = { 0.1,99.9,50 };
+			float* triangleSidesPtr = triangleSlide;
+			char result[MAXSIZE];
+			char expected[MAXSIZE] = "Scalene triangle";
+			analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2], result);
+			int cmp = strcmp(result, expected);
+			Assert::AreEqual(0, cmp);
+		}
 		//Test for the 3 angles results of Equilateral triangle 
 		TEST_METHOD(angle1OfEquilateralTriangle)
 		{
@@ -74,7 +84,6 @@ namespace analyzeTriangleFunction
 			float expected = 60.030434;
 
 			Assert::AreEqual(expected, angle1);
-
 		}
 		TEST_METHOD(angle2OfEquilateralTriangle)
 		{

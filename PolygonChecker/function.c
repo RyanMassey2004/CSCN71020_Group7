@@ -72,7 +72,6 @@ char* analyzeTriangle(float side1, float side2, float side3, char result[MAXSIZE
 		printf("Scalene triangle\n");
 		strncpy(result, "Scalene triangle\0", MAXSIZE);
 	}
-
 	return result;
 }
 

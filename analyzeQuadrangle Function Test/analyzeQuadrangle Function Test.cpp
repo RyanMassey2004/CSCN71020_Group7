@@ -34,7 +34,66 @@ namespace analyzeQuadrangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
-		//Perimeter of rectangle
+		TEST_METHOD(analyzeQuadrangle3)
+		{
+			float quadrangleSides[4] = { -2,1,5,7 };
+			float* quadrangleSidesPtr = quadrangleSides;
+			char result[MAXSIZE];
+			char expected[MAXSIZE] = "Invalid input";
+			analyzeQuadrangle(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3], result);
+			int cmp = strcmp(result, expected);
+			Assert::AreEqual(0, cmp);
+		}
+		TEST_METHOD(analyzeQuadrangle4)
+		{
+			float quadrangleSides[4] = { 2.4,1.7,5.1,7.3 };
+			float* quadrangleSidesPtr = quadrangleSides;
+			char result[MAXSIZE];
+			char expected[MAXSIZE] = "Not rectangle";
+			analyzeQuadrangle(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3], result);
+			int cmp = strcmp(result, expected);
+			Assert::AreEqual(0, cmp);
+		}
+		TEST_METHOD(analyzeQuadrangle5)
+		{
+			float quadrangleSides[4] = { 6.4,6.4,6.4,6.4 };
+			float* quadrangleSidesPtr = quadrangleSides;
+			char result[MAXSIZE];
+			char expected[MAXSIZE] = "Rectangle";
+			analyzeQuadrangle(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3], result);
+			int cmp = strcmp(result, expected);
+			Assert::AreEqual(0, cmp);
+		}
+		TEST_METHOD(analyzeQuadrangle6)
+		{
+			float quadrangleSides[4] = { 5,1,0.00001,7.3 };
+			float* quadrangleSidesPtr = quadrangleSides;
+			char result[MAXSIZE];
+			char expected[MAXSIZE] = "Not rectangle";
+			analyzeQuadrangle(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3], result);
+			int cmp = strcmp(result, expected);
+			Assert::AreEqual(0, cmp);
+		}
+		TEST_METHOD(analyzeQuadrangle7)
+		{
+			float quadrangleSides[4] = { -2.4,1.7,5.1,7.3 };
+			float* quadrangleSidesPtr = quadrangleSides;
+			char result[MAXSIZE];
+			char expected[MAXSIZE] = "Invalid input";
+			analyzeQuadrangle(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3], result);
+			int cmp = strcmp(result, expected);
+			Assert::AreEqual(0, cmp);
+		}
+		TEST_METHOD(analyzeQuadrangle8)
+		{
+			float quadrangleSides[4] = { -0.9999,0,5.1,7.3 };
+			float* quadrangleSidesPtr = quadrangleSides;
+			char result[MAXSIZE];
+			char expected[MAXSIZE] = "Invalid input";
+			analyzeQuadrangle(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3], result);
+			int cmp = strcmp(result, expected);
+			Assert::AreEqual(0, cmp);
+		}
 		TEST_METHOD(perimeterOfRectangle1)
 		{
 			float quadrangleSides[4] = { 2,2,2,2 };
@@ -45,21 +104,20 @@ namespace analyzeQuadrangleFunction
 		}
 		TEST_METHOD(perimeterOfRectangle2)
 		{
-			float quadrangleSides[4] = { 5.1,3.7,2.8,1.4 };
+			float quadrangleSides[4] = { 0.001,0.001,0.001,0.001 };
 			float* quadrangleSidesPtr = quadrangleSides;
 			float Perimeter = perimeter(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3]);
-			float expected = 13;
+			float expected = 0.004;
 			Assert::AreEqual(expected, Perimeter);
 		}
 		TEST_METHOD(perimeterOfRectangle3)
 		{
-			float quadrangleSides[4] = { 0.01,0.01,0.01,0.01 };
+			float quadrangleSides[4] = { 5.3,5.3,5.3,5.3 };
 			float* quadrangleSidesPtr = quadrangleSides;
 			float Perimeter = perimeter(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3]);
-			float expected = 0.04;
+			float expected = 21.2;
 			Assert::AreEqual(expected, Perimeter);
 		}
-		//Area of rectangle
 		TEST_METHOD(areaOfRectangle1)
 		{
 			float quadrangleSides[4] = { 2,2,2,2 };
@@ -70,10 +128,10 @@ namespace analyzeQuadrangleFunction
 		}
 		TEST_METHOD(areaOfRectangle2)
 		{
-			float quadrangleSides[4] = { 3.4,3.4,3.4,3.4 };
+			float quadrangleSides[4] = { 2.4,2.4,2.4,2.4 };
 			float* quadrangleSidesPtr = quadrangleSides;
 			float Area = area(quadrangleSidesPtr[0], quadrangleSidesPtr[1]);
-			float expected = 11.56;
+			float expected = 5.76;
 			Assert::AreEqual(expected, Area);
 		}
 		TEST_METHOD(areaOfRectangle3)
@@ -84,7 +142,6 @@ namespace analyzeQuadrangleFunction
 			float expected = 0.0001;
 			Assert::AreEqual(expected, Area);
 		}
-		//Perimeter of quadrangle
 		TEST_METHOD(perimeterOfQuadrangle1)
 		{
 			float quadrangleSides[4] = { 2,3,5,7 };

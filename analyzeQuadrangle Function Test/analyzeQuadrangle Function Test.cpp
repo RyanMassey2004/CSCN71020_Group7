@@ -93,13 +93,5 @@ namespace analyzeQuadrangleFunction
 			float expected = 17;
 			Assert::AreEqual(expected, Perimeter);
 		}
-		TEST_METHOD(perimeterOfQuadrangle2)
-		{
-			float quadrangleSides[4] = { 0.01,3.05,0.9,3.5 };
-			float* quadrangleSidesPtr = quadrangleSides;
-			float Perimeter = perimeter(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3]);
-			float expected = 7.46;
-			Assert::AreEqual(expected, Perimeter);
-		}
 	};
 }

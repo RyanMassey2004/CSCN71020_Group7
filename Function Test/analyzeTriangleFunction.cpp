@@ -7,6 +7,7 @@ extern "C" char* analyzeTriangle(float side1, float side2, float side3, char res
 extern "C" float angleA(float side1, float side2, float side3);
 extern "C" float angleB(float side1, float side2, float side3);
 extern "C" float angleC(float side1, float side2, float side3);
+extern "C" float* getTriangleSides(float* triangleSides);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -65,6 +66,16 @@ namespace analyzeTriangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
+		TEST_METHOD(typeOfTriangle6)
+		{
+			float triangleSlide[3] = { 0.1,99.9,50 };
+			float* triangleSidesPtr = triangleSlide;
+			char result[MAXSIZE];
+			char expected[MAXSIZE] = "Scalene triangle";
+			analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2], result);
+			int cmp = strcmp(result, expected);
+			Assert::AreEqual(0, cmp);
+		}
 		//Test for the 3 angles results of Equilateral triangle 
 		TEST_METHOD(angle1OfEquilateralTriangle)
 		{
@@ -74,7 +85,6 @@ namespace analyzeTriangleFunction
 			float expected = 60.030434;
 
 			Assert::AreEqual(expected, angle1);
-
 		}
 		TEST_METHOD(angle2OfEquilateralTriangle)
 		{
@@ -89,7 +99,7 @@ namespace analyzeTriangleFunction
 		{
 			float triangleSlide[3] = { 3,3,3 };
 			float* triangleSidesPtr = triangleSlide;
-			float angle2 = angleB(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
+			float angle2 = angleC(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			float expected = 60.030434;
 
 			Assert::AreEqual(expected, angle2);

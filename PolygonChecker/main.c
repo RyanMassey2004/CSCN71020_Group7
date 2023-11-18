@@ -2,6 +2,7 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 #include "main.h"
 #include "function.h"
 
@@ -47,7 +48,7 @@ int main() {
 }
 
 void printWelcome() {
-	printf_s("\n");
+	printf_s("\ni");
 	printf_s(" **********************\n");
 	printf_s("**     Welcome to     **\n");
 	printf_s("**   Polygon Checker  **\n");
@@ -57,7 +58,7 @@ void printWelcome() {
 int printShapeMenu() {
 	printf_s("1. Triangle\n");
 	printf_s("2. Quadrangle\n");
-	printf_s("0. Exit\n");
+	printf_s("0. Exit\n ");
 
 	int shapeChoice;
 
@@ -72,7 +73,10 @@ float* getTriangleSides(float* triangleSides) {
 	for (int i = 0; i < 3; i++)
 	{
 		printf("Side %d: ", i + 1);
-		scanf_s("%f", &triangleSides[i]);
+		int check = scanf_s("%f", &triangleSides[i]);
+		if (check != 1)
+			printf("Input Invalid, stopping program");
+			EXIT_FAILURE;
 	}
 	return triangleSides;
 }

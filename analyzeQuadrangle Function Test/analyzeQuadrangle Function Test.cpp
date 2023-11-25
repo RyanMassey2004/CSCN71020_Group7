@@ -74,7 +74,7 @@ namespace analyzeQuadrangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
-		//Perimeter of rectangle
+		//Perimeter function
 		TEST_METHOD(perimeterFunc1)
 		{
 			float quadrangleSides[4] = { 2,2,2,2 };
@@ -99,6 +99,7 @@ namespace analyzeQuadrangleFunction
 			float expected = 7.46;
 			Assert::AreEqual(expected, Perimeter);
 		}
+		//Area function
 		TEST_METHOD(areaFunc1)
 		{
 			float quadrangleSides[4] = { 2,2,2,2 };
@@ -123,7 +124,7 @@ namespace analyzeQuadrangleFunction
 			Assert::AreEqual(expected, Area);
 		}
 		TEST_METHOD(areaFunc4) {
-			float quadrangleSides[4] = { 0.01,0.01,0.01,0.01 };
+			float quadrangleSides[4] = { 0.01,0.01,0.01,0.01 };  
 			float* quadrangleSidesPtr = quadrangleSides;
 			float Area = area(quadrangleSidesPtr[0], quadrangleSidesPtr[1]);
 			float expected = 0.000100;

@@ -88,7 +88,7 @@ namespace analyzeTriangleFunction
 		}
 		TEST_METHOD(typeOfTriangle8) // Test edge case using -0.1, 100.1 and 50 (100 is the max number)
 		{
-			float triangleSlide[3] = { -0.1 100.1,50 };
+			float triangleSlide[3] = { -0.1, 100.1,50 };
 			float* triangleSidesPtr = triangleSlide;
 			char result[MAXSIZE];
 			char expected[MAXSIZE] = "Not a triangle";

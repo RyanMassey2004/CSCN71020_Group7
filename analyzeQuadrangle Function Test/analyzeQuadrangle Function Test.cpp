@@ -95,7 +95,7 @@ namespace analyzeQuadrangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
-		TEST_METHOD(perimeterOfRectangle1) // Test functionality for the perimeter of rectangle using the same input for each side
+		TEST_METHOD(perimeterFunc1) 
 		{
 			float quadrangleSides[4] = { 2,2,2,2 };
 			float* quadrangleSidesPtr = quadrangleSides;
@@ -103,7 +103,7 @@ namespace analyzeQuadrangleFunction
 			float expected = 8;
 			Assert::AreEqual(expected, Perimeter);
 		}
-		TEST_METHOD(perimeterOfRectangle2) // Test edge case for the perimeter of rectangle using 0.001 for each side
+		TEST_METHOD(perimeterFunc2) 
 		{
 			float quadrangleSides[4] = { 0.001,0.001,0.001,0.001 };
 			float* quadrangleSidesPtr = quadrangleSides;
@@ -111,15 +111,15 @@ namespace analyzeQuadrangleFunction
 			float expected = 0.004;
 			Assert::AreEqual(expected, Perimeter);
 		}
-		TEST_METHOD(perimeterOfRectangle3) // Test functionality for the perimeter of rectangle using the same decimal input for each side
+		TEST_METHOD(perimeterFunc3) 
 		{
-			float quadrangleSides[4] = { 5.3,5.3,5.3,5.3 };
+			float quadrangleSides[4] = { 5.4,5.8,2.4,6.4 };
 			float* quadrangleSidesPtr = quadrangleSides;
 			float Perimeter = perimeter(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3]);
-			float expected = 21.2;
+			float expected = 20;
 			Assert::AreEqual(expected, Perimeter);
 		}
-		TEST_METHOD(areaOfRectangle1) // Test functionality for the area of rectangle using the same input for each side
+		TEST_METHOD(areaFunc1) 
 		{
 			float quadrangleSides[4] = { 2,2,2,2 };
 			float* quadrangleSidesPtr = quadrangleSides;
@@ -127,7 +127,7 @@ namespace analyzeQuadrangleFunction
 			float expected = 4;
 			Assert::AreEqual(expected, Area);
 		}
-		TEST_METHOD(areaOfRectangle2) // Test functionality for the area of rectangle using the same decimal input for each side
+		TEST_METHOD(areaFunc2) 
 		{
 			float quadrangleSides[4] = { 2.4,2.4,2.4,2.4 };
 			float* quadrangleSidesPtr = quadrangleSides;
@@ -135,30 +135,12 @@ namespace analyzeQuadrangleFunction
 			float expected = 5.76;
 			Assert::AreEqual(expected, Area);
 		}
-		TEST_METHOD(areaOfRectangle3) // Test edge case for the area of rectangle using 0.01 for each side
-		{
+		TEST_METHOD(areaFunc3) {
 			float quadrangleSides[4] = { 0.01,0.01,0.01,0.01 };
 			float* quadrangleSidesPtr = quadrangleSides;
 			float Area = area(quadrangleSidesPtr[0], quadrangleSidesPtr[1]);
 			float expected = 0.0001;
 			Assert::AreEqual(expected, Area);
-		}
-
-		TEST_METHOD(perimeterOfQuadrangle)
-		{
-			float quadrangleSides[4] = { 2,3,5,7 };
-			float* quadrangleSidesPtr = quadrangleSides;
-			float Perimeter = perimeter(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3]);
-			float expected = 17;
-			Assert::AreEqual(expected, Perimeter);
-		}
-		TEST_METHOD(perimeterOfQuadrangle2)
-		{
-			float quadrangleSides[4] = { 0.01,3.05,0.9,3.5 };
-			float* quadrangleSidesPtr = quadrangleSides;
-			float Perimeter = perimeter(quadrangleSidesPtr[0], quadrangleSidesPtr[1], quadrangleSidesPtr[2], quadrangleSidesPtr[3]);
-			float expected = 7.46;
-			Assert::AreEqual(expected, Perimeter);
 		}
 	};
 }

@@ -7,6 +7,7 @@ extern "C" char* analyzeTriangle(float side1, float side2, float side3, char res
 extern "C" float angleA(float side1, float side2, float side3);
 extern "C" float angleB(float side1, float side2, float side3);
 extern "C" float angleC(float side1, float side2, float side3);
+extern "C" float* getTriangleSides(float* triangleSides);
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
@@ -15,7 +16,7 @@ namespace analyzeTriangleFunction
 	TEST_CLASS(analyzeTriangleFunction)
 	{
 	public:
-		TEST_METHOD(typeOfTriangle1)
+		TEST_METHOD(typeOfTriangle1) // Test functionality for Equilateral triangle (All sides equal)
 		{
 			float triangleSlide[3] = { 2,2,2 };
 			float* triangleSidesPtr = triangleSlide;
@@ -25,7 +26,7 @@ namespace analyzeTriangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
-		TEST_METHOD(typeOfTriangle2)
+		TEST_METHOD(typeOfTriangle2) //  Test functionality for Not a triangle (At least one side is 0 or less than 0)
 		{
 			float triangleSlide[3] = { -2,2,2 };
 			float* triangleSidesPtr = triangleSlide;
@@ -35,7 +36,7 @@ namespace analyzeTriangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
-		TEST_METHOD(typeOfTriangle3)
+		TEST_METHOD(typeOfTriangle3) //  Test functionality for Isosceles triangle (Two sides are equal)
 		{
 			float triangleSlide[3] = { 2,2,4 };
 			float* triangleSidesPtr = triangleSlide;
@@ -45,7 +46,7 @@ namespace analyzeTriangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
-		TEST_METHOD(typeOfTriangle4)
+		TEST_METHOD(typeOfTriangle4) //  Test functionality for Isosceles triangle (Two sides are equal)
 		{
 			float triangleSlide[3] = { 3,5,3 };
 			float* triangleSidesPtr = triangleSlide;
@@ -55,7 +56,7 @@ namespace analyzeTriangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
-		TEST_METHOD(typeOfTriangle5)
+		TEST_METHOD(typeOfTriangle5) //  Test functionality for Scalene triangle (No sides are equal to each other)
 		{
 			float triangleSlide[3] = { 3,5,7 };
 			float* triangleSidesPtr = triangleSlide;
@@ -65,7 +66,7 @@ namespace analyzeTriangleFunction
 			int cmp = strcmp(result, expected);
 			Assert::AreEqual(0, cmp);
 		}
-		TEST_METHOD(typeOfTriangle6)
+		TEST_METHOD(typeOfTriangle6) // Test edge case using 0.1, 99.9 and 50 (100 is the max number)
 		{
 			float triangleSlide[3] = { 0.1,99.9,50 };
 			float* triangleSidesPtr = triangleSlide;
